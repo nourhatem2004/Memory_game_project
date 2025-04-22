@@ -50,6 +50,19 @@ function drawBoard() {
 
     let scoreDiv = document.getElementById("score");
     scoreDiv.innerHTML = score;
+
+    if (score <= 0) {
+        const image = new Image();
+        image.src = `images/sadcat.jpg`; 
+        ctx.drawImage(
+            image,
+            0,
+            100,
+            650,
+            340
+        );
+    }
+
 }
 
 function drawCard(x, y) {
@@ -83,7 +96,10 @@ function drawImages() {
 }
 
 function flipCard(card) {
-    if (busy || card == card1) return;
+    if (busy || card == card1 || score <= 0) {
+        drawBoard();
+        return;
+    };
     if (chosenCards == false) {
         card1 = card;
         card1.visible = false;
@@ -137,10 +153,12 @@ canvas.addEventListener("click", (event) => {
 
 function updateScore(penalty) {
     score = score - penalty;
-    if (score <= 0) {
-        alert("you failed");
-        location.reload();
-    }
+    // if (score <= 0) {
+    //     alert("you failed");
+    //     location.reload();
+    // }
 }
+
+
 
 drawBoard();
