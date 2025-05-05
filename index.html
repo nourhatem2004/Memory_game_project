@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Page</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #c9c1c1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+      }
+      .start-button {
+        background-color: #ff69b4;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+      .start-button:hover {
+        background-color: #dd5d9d;
+        transform: scale(1.05);
+      }
+      .container {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Memory Game</h1>
+      <p>Test your memory with this fun card matching game!</p>
+      <button
+        class="start-button"
+        onclick="window.location.href='project.html'"
+      >
+        Start Game
+      </button>
+    </div>
+  </body>
+</html>

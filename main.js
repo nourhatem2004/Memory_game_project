@@ -117,8 +117,6 @@ function flipCard(card) {
                 card1.visible = true;
                 card2.visible = true;
                 updateScore(50);
-            } else {
-                // will write a function here
             }
             console.log("redrawing");
             drawBoard();
@@ -127,6 +125,29 @@ function flipCard(card) {
             card2 = null;
             busy = false;
         }, 1500);
+        
+        // Check if all cards are matched after the timeout
+        setTimeout(() => {
+            checkWinCondition();
+        }, 1600);
+    }
+}
+
+function checkWinCondition() {
+    const allMatched = cards.every(card => !card.visible);
+    
+    if (allMatched) {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.font = "bold 48px Arial";
+        ctx.fillStyle = "#4CAF50";
+        ctx.textAlign = "center";
+        ctx.fillText("YOU WIN!", canvas.width / 2, canvas.height / 2 - 30);
+        
+        ctx.font = "24px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText(`Final Score: ${score}`, canvas.width / 2, canvas.height / 2 + 30);
     }
 }
 
@@ -153,12 +174,6 @@ canvas.addEventListener("click", (event) => {
 
 function updateScore(penalty) {
     score = score - penalty;
-    // if (score <= 0) {
-    //     alert("you failed");
-    //     location.reload();
-    // }
 }
-
-
 
 drawBoard();

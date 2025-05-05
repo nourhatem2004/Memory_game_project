@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>
-            body {
-                background-color: #C9C1C1; /* floral white */
-                color: #4B0082; /* indigo text */
-                text-align: center;
-                font-family: 'Comic Sans MS', cursive, sans-serif;
-            }
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #c9c1c1;
+        color: #4b0082;
+        text-align: center;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
 
-            canvas {
-                border: 4px solid #FFDAB9; /* peach puff */
-                background-color: #FFF0F5; /* lavender blush */
-                margin-top: 10px;
-                box-shadow: 0 0 15px #FF69B4; /* soft candy glow */
-            }
+      canvas {
+        border: 4px solid #ffdab9;
+        background-color: #fff0f5;
+        margin-top: 10px;
+        box-shadow: 0 0 15px #ff69b4;
+      }
 
-            .score {
-                font-size: 24px;
-                font-weight: bold;
-                color: #FF69B4; /* hot pink */
-                margin: 10px 0;
-            }
+      .score {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff69b4;
+        margin: 10px 0;
+      }
 
-            .score p {
-                margin: 4px 0;
-            }
+      .score p {
+        margin: 4px 0;
+      }
 
-            button {
-                background-color: #87CEFA; /* sky blue */
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                font-family: inherit;
-                font-size: 16px;
-                border-radius: 10px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
+      button {
+        background-color: #87cefa;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-family: inherit;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-            button:hover {
-                background-color: #FF69B4; /* hot pink on hover */
-            }
-        </style>
-    </head>
+      button:hover {
+        background-color: #ff69b4;
+      }
+    </style>
+  </head>
 
-    <body>
-        <div class="score">
-            <p>Score : <span id="score"></span></p>
-        </div>
-        <canvas id="gameCanvas" width="600" height="600"></canvas>
-
-        <script src="main.js"></script>
-    </body>
+  <body>
+    <div class="score">
+      <p>Score : <span id="score"></span></p>
+    </div>
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    <br />
+    <audio id="backgroundMusic" loop>
+      <source src="images/audio.mp3" type="audio/mpeg" />
+    </audio>
+    <button onclick="document.getElementById('backgroundMusic').play()">
+      Play Music
+    </button>
+    <script src="main.js"></script>
+  </body>
 </html>
